@@ -1,0 +1,36 @@
+@model IEnumerable<NetCoreWebApp.Models.Album>
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Albums</h2>
+<table class ="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ArtistName</th>
+        <th>Price</th>
+        <th>Genre</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayTextFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArtistName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+        </tr>
+    }
+</table>
